@@ -1,7 +1,8 @@
-import react, {useState} from 'react'
+import react, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import {Button} from './Button';
-import './components/Navbar';
+<script src="https://kit.fontawesome.com/3c152d7eb7.js" crossorigin="anonymous"></script>
+
 
 
 function Navbar() {
@@ -19,14 +20,19 @@ function Navbar() {
         }
     };
 
+    useEffect(() => {
+        showButton()
+    },[]);
+
+
     window.addEventListener('resize', showButton);
 
     return (
     <>
     <nav className='navbar'>
         <div className='navbar-container'>
-            <Link to="/" className='navbar-logo'>
-                '#TAG' <i className="fa-solid fa-rugby-ball"></i>
+            <Link to="/" className='navbar-logo' onClick={closeMobileMenu}>
+                '#TAG' <body><i className="fa-solid fa-rugby-ball"></i></body>
             </Link>
             <div className='menu-icon'>
                 <i className={click ?'fas fa-times' : 'fa-regular fa-bars'} />
