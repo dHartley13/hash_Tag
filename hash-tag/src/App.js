@@ -14,8 +14,6 @@ import { ellipse, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
-import Navbar from './components/Navbar';
-import './App.css';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -36,20 +34,33 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+
+import Navbar from './components/Navbar';
+import './App,css';
+import UploadAvatar from './components/UploadAvatar';
+import Home from './pages/Home';
+
+
 setupIonicReact();
 
 function App() {
   return (
+    <Router>
+          <Navbar />
+          <Switch>
+            <Route path='/' exact component={Home}/>
+          </Switch>
+        </Router>
 
-  <>
-  <Router>
-    <Navbar />
-    <Switch>
-      <Route path='/' exact />
-    </Switch>
-  </Router>
-  </>
-);
-};
+    /*
+    <div className="App">
+        <UploadAvatar/>
+    </div>  
+
+*/
+  );
+}
 
 export default App;
+
+
