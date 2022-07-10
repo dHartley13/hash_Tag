@@ -1,0 +1,7 @@
+{
+  "name": "Hash Tag",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
